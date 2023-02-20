@@ -11,6 +11,10 @@ const { authentication } = require("./middleware/authentication.middleware");
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send({ msg: "API is working fine" });
+});
+
 app.use("/users", userRoute);
 
 app.use(authentication);
